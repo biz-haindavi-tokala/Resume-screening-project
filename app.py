@@ -13,7 +13,7 @@ st.title("AI Resume Screening System")
 
 job_description = st.text_area("Paste Job Description")
 
-uploaded_file = st.file_uploader(   # Upload Resume PDF
+uploaded_file = st.file_uploader(                               # Upload Resume PDF
     "Upload Resume PDF",
     type=["pdf"]
 )
@@ -29,14 +29,14 @@ if st.button("Analyze Resume"):
 
     else:
 
-        resume_text = extract_text_from_pdf(uploaded_file)
+        resume_text = extract_text_from_pdf(uploaded_file)       # Extract text from uploaded PDF resume
 
-        score = calculate_similarity(
+        score = calculate_similarity(                            # Find similarity score between resume text and job description text
             resume_text,
             job_description
         )
 
-        matched_skills, missing_skills = compare_skills(
+        matched_skills, missing_skills = compare_skills(         # Compare skills between resume text and job description text
             resume_text,
             job_description
         )

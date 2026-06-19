@@ -63,7 +63,6 @@ def compare_skills(
     resume_text,
     job_description
 ):
-    print(job_description) 
     resume_skills = set(
         extract_skills(resume_text)         # extract skills from resume text in the skillset
     )
