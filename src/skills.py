@@ -49,9 +49,6 @@ SKILLS = [
 ]
 
 def extract_skills(text):
-    """
-    Extract skills from text.
-    """
     text = text.lower()
     extracted_skills = []
     for skill in SKILLS:
@@ -63,21 +60,12 @@ def compare_skills(
     resume_text,
     job_description
 ):
-    resume_skills = set(
-        extract_skills(resume_text)         # extract skills from resume text in the skillset
-    )
+    resume_skills = set(extract_skills(resume_text))     # extract skills from resume text in the skillset
 
-    jd_skills = set(
-        extract_skills(job_description)     # extract skills from job description in the skillset
-    )
+    jd_skills = set(extract_skills(job_description))     # extract skills from job description in the skillset
 
-    matched = resume_skills.intersection(
-        jd_skills                           # common skills between resume and job description
-    )
+    matched = resume_skills.intersection(jd_skills)      # common skills between resume and job description
 
     missing = jd_skills - resume_skills     # skills in job description but not in resume
 
-    return (
-        sorted(list(matched)),
-        sorted(list(missing))
-    )
+    return (sorted(list(matched)),sorted(list(missing)))
