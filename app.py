@@ -13,7 +13,7 @@ st.title("AI Resume Screening System")
 
 job_description = st.text_area("Paste Job Description")
 
-uploaded_file = st.file_uploader(                               # Upload Resume PDF
+uploaded_file = st.file_uploader(                                # Upload Resume PDF
     "Upload Resume PDF",
     type=["pdf"]
 )
@@ -45,10 +45,10 @@ if st.button("Analyze Resume"):
 
         st.metric("Match Score", f"{score}%")
 
-        st.subheader("Matched Skills")
+        st.subheader("Matched Skills")                          # display matched skills between resume and job description
         st.write(matched_skills)
 
-        st.subheader("Missing Skills")
+        st.subheader("Missing Skills")                          # display missing skills between resume and job description
         st.write(missing_skills)
 
         st.subheader("Recommendation")
