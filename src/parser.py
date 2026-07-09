@@ -11,7 +11,7 @@ def extract_text_from_pdf(pdf_file):
         if content:
             text += content + "\n"          # Add newline after each page
 
-    text = text.replace("\n", " ")          # Replace newlines with spaces
+    text = text.replace("\n", " ")          # Replace new lines with spaces
     text = " ".join(text.split())           # Remove extra spaces
 
     return text
